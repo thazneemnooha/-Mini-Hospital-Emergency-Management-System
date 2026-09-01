@@ -1,47 +1,40 @@
-import bst.Patient;
-import queue.EmergencyQueue;
+import stack.TreatmentRecord;
+import stack.TreatmentStack;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        EmergencyQueue emergencyQueue = new EmergencyQueue();
+        TreatmentStack treatmentStack = new TreatmentStack();
 
-        Patient patient1 =
-                new Patient(
+        treatmentStack.addTreatmentRecord(
+                new TreatmentRecord(
                         1001,
                         "Nooha",
-                        22,
-                        "0771234567",
-                        "Fever"
-                );
+                        "Medicine Given"
+                )
+        );
 
-        Patient patient2 =
-                new Patient(
+        treatmentStack.addTreatmentRecord(
+                new TreatmentRecord(
                         1002,
                         "Ali",
-                        20,
-                        "0722222222",
-                        "Headache"
-                );
+                        "Painkillers"
+                )
+        );
 
-        Patient patient3 =
-                new Patient(
+        treatmentStack.addTreatmentRecord(
+                new TreatmentRecord(
                         1003,
                         "Sara",
-                        24,
-                        "0711111111",
-                        "Flu"
-                );
+                        "Injection"
+                )
+        );
 
-        emergencyQueue.enqueue(patient1);
-        emergencyQueue.enqueue(patient2);
-        emergencyQueue.enqueue(patient3);
+        treatmentStack.displayTreatmentHistory();
 
-        emergencyQueue.displayQueue();
+        treatmentStack.removeLatestTreatment();
 
-        emergencyQueue.dequeue();
-
-        emergencyQueue.displayQueue();
+        treatmentStack.displayTreatmentHistory();
     }
 }
