@@ -1,53 +1,47 @@
 import bst.Patient;
-import bst.PatientBST;
+import queue.EmergencyQueue;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        PatientBST patientBST = new PatientBST();
+        EmergencyQueue emergencyQueue = new EmergencyQueue();
 
-        patientBST.insert(
+        Patient patient1 =
                 new Patient(
                         1001,
                         "Nooha",
                         22,
                         "0771234567",
-                        "Fever")
-        );
+                        "Fever"
+                );
 
-        patientBST.insert(
-                new Patient(
-                        1003,
-                        "Sara",
-                        24,
-                        "0711111111",
-                        "Flu")
-        );
-
-        patientBST.insert(
+        Patient patient2 =
                 new Patient(
                         1002,
                         "Ali",
                         20,
                         "0722222222",
-                        "Headache")
-        );
+                        "Headache"
+                );
 
-        patientBST.displayPatients();
+        Patient patient3 =
+                new Patient(
+                        1003,
+                        "Sara",
+                        24,
+                        "0711111111",
+                        "Flu"
+                );
 
-        System.out.println("\nSearching Patient 1002");
+        emergencyQueue.enqueue(patient1);
+        emergencyQueue.enqueue(patient2);
+        emergencyQueue.enqueue(patient3);
 
-        Patient patient = patientBST.search(1002);
+        emergencyQueue.displayQueue();
 
-        if (patient != null) {
-            System.out.println(patient);
-        }
+        emergencyQueue.dequeue();
 
-        System.out.println("\nDeleting Patient 1003");
-
-        patientBST.delete(1003);
-
-        patientBST.displayPatients();
+        emergencyQueue.displayQueue();
     }
 }
