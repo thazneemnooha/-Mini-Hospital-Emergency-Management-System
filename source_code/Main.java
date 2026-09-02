@@ -1,40 +1,44 @@
-import stack.TreatmentRecord;
-import stack.TreatmentStack;
+import linkedlist.Visit;
+import linkedlist.VisitHistory;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        TreatmentStack treatmentStack = new TreatmentStack();
+        VisitHistory history = new VisitHistory();
 
-        treatmentStack.addTreatmentRecord(
-                new TreatmentRecord(
-                        1001,
-                        "Nooha",
-                        "Medicine Given"
-                )
+        history.addVisit(
+            new Visit(
+                501,
+                "2025-08-01",
+                "Dr. Perera",
+                "Fever",
+                "Tablets"
+            )
         );
 
-        treatmentStack.addTreatmentRecord(
-                new TreatmentRecord(
-                        1002,
-                        "Ali",
-                        "Painkillers"
-                )
+        history.addVisit(
+            new Visit(
+                502,
+                "2025-08-15",
+                "Dr. Silva",
+                "Flu",
+                "Injection"
+            )
         );
 
-        treatmentStack.addTreatmentRecord(
-                new TreatmentRecord(
-                        1003,
-                        "Sara",
-                        "Injection"
-                )
-        );
+        history.displayVisits();
 
-        treatmentStack.displayTreatmentHistory();
+        System.out.println("\nSearching Visit 501");
 
-        treatmentStack.removeLatestTreatment();
+        Visit found = history.searchVisit(501);
 
-        treatmentStack.displayTreatmentHistory();
+        if(found != null) {
+            System.out.println(found);
+        }
+
+        history.removeVisit(502);
+
+        history.displayVisits();
     }
 }
