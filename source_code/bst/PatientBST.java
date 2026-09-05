@@ -6,6 +6,10 @@ public class PatientBST {
 
     // INSERT PATIENT
 
+        public boolean patientExists(int patientId) {
+        return search(patientId) != null;
+    }
+
     public void insert(Patient patient) {
         root = insertRecursive(root, patient);
     }
