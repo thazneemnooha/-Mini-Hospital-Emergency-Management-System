@@ -104,38 +104,6 @@ Visit information includes:
 
 ---
 
-## Project Structure
-
-```text
-CIT300-Mini-Hospital-Emergency-System
-│
-├── source_code
-│   │
-│   ├── Main.java
-│   │
-│   ├── bst
-│   │   ├── Patient.java
-│   │   ├── BSTNode.java
-│   │   └── PatientBST.java
-│   │
-│   ├── queue
-│   │   └── EmergencyQueue.java
-│   │
-│   ├── stack
-│   │   ├── TreatmentRecord.java
-│   │   └── TreatmentStack.java
-│   │
-│   └── linkedlist
-│       ├── Visit.java
-│       └── VisitHistory.java
-│
-├── screenshots
-├── README.md
-└── .gitignore
-```
-
----
-
 ## Main Features
 
 - Register new patients
